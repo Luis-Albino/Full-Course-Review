@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --font-size: 10vh;
+    --border-radius: calc(0.5*var(--font-size));
+    --padding: calc(0.25*var(--font-size)) calc(1.5*var(--font-size));
+    --star-height: calc(0.75*var(--font-size));
+    --star-width: Calc(1.05*var(--star-height));
+    --box-shadow:
+        inset rgb(204, 204, 211) 0 calc(0.75*var(--font-size)) 0 0vh,
+        rgb(77, 77, 81) 0 0 0 calc(var(--font-size)/40),
+        rgb(51, 51, 58) 0 calc(var(--font-size)/10) calc(var(--font-size)/20) 0,
+        rgb(171, 171, 178) 0 0 0 calc(3*var(--font-size)/20),
+        white 0 0 0 calc(3.5*var(--font-size)/20),
+        rgb(43, 43, 50) 0 0 0 calc(var(--font-size)/5),
+        rgb(118, 118, 123) 0 calc(var(--font-size)/20) calc(var(--font-size)/20) calc(var(--font-size)/5);
+}
+
+.fancy-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    height: auto;
+    width: auto;
+    
+    padding: var(--padding);
+    font-size: var(--font-size);
+    
+    text-transform: uppercase;
+    color: rgb(43, 43, 50);
+    background-color: rgb(165, 165, 168);
+
+    box-shadow: var(--box-shadow)
+}
+
+.fancy-button:before,
+.fancy-button:after {
+    box-sizing: border-box;
+    content: "";
+    height: var(--star-height);
+    width: var(--star-width);
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+
+    background: rgb(77, 77, 81);
+    clip-path: polygon(35% 35%,0% 35%,25% 61%,15% 100%,50% 77%, 85% 100%,75% 61%, 100% 35%,65% 35%,50% 0%);
+}
+
+.fancy-button:before {
+    left: 5%;
+    transform: translate(0,-50%);
+}
+
+.fancy-button:after {
+    left: 95%;
+    transform: translate(-100%,-50%);
+}

@@ -1,0 +1,45 @@
+#inputValue {
+    position: relative;
+    width: 200px;
+    height: 80px;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sierpinski {
+    border: 3px solid blue;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 500px;
+    height: 433px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.triangle {
+    width: 100%; 
+    height: 100%;
+    background: black;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.translated {
+    transform: translate(50%,0);
+}
+
+.minimize {
+    width: 50%; 
+    height: 50%;
+}
